@@ -1,0 +1,8 @@
+# node modules
+node_modules
+
+# dist files - only for npm
+dist
+
+# Misc
+.DS_Store

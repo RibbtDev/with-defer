@@ -1,0 +1,50 @@
+{
+    "name": "with-defer",
+    "version": "1.0.0",
+    "description": "Go-style defer functionality for JavaScript. Declare cleanup functions right next to resource acquisition.",
+    "scripts": {
+        "build:cjs": "tsc -p tsconfig.cjs.json",
+        "build:esm": "tsc",
+        "build": "rm -rf dist/ && pnpm build:esm && pnpm build:cjs",
+        "test": "vitest",
+        "prepare": "pnpm test && pnpm build"
+    },
+    "keywords": [
+        "defer",
+        "cleanup",
+        "resource",
+        "close",
+        "dispose",
+        "finally",
+        "memory-leak"
+    ],
+    "author": {
+        "name": "Rohit Kumar",
+        "url": "https://github.com/RibbtDev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RibbtDev/with-defer"
+    },
+    "homepage": "https://github.com/RibbtDev/ordinary-arg-parser",
+    "license": "MIT",
+    "type": "module",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/esm/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/esm/index.d.ts",
+            "import": "./dist/esm/index.js",
+            "require": "./dist/cjs/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "packageManager": "pnpm@10.24.0",
+    "devDependencies": {
+        "typescript": "^5.9.3",
+        "vitest": "^4.0.15"
+    }
+}
